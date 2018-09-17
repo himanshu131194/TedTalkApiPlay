@@ -38,23 +38,3 @@ exports.getAllTalks = (projection=null)=>{
   }
   return query(queryParams, { method: 'GET' });
 }
-
-
-
-// const login = (username, password) => query('/login', {
-// 	method: 'POST',
-// 	body: { username, password },
-// })
-// const logout = () => query('/logout', {
-// 	method: 'POST',
-// })
-// const getProfile = () => query('/profile', {
-// 	method: 'GET',
-// })
-// const changePassword = (password) => query('/changepass', {
-// 	method: 'PUT',
-// 	body: { password },
-// })
-// const deleteProfile = () => query('/delete', {
-// 	method: 'DELETE',
-// })

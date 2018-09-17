@@ -2,14 +2,15 @@ module.exports = (app, db)=>{
    app.get('/talks', async (req ,res)=>{
        let talks = '';
        let projectionFilters = {};
+       console.log(req.query);
        if(req.query['ted_name'])
-          projectionFilters['name'] = ((req.query['ted_name']).trim());
+          projectionFilters['main_speaker'] = decodeURIComponent((req.query['ted_name']).trim());
        if(req.query['ted_occupation'])
-          projectionFilters['speaker_occupation'] = (req.query['ted_occupation']).trim();
+          projectionFilters['speaker_occupation'] = decodeURIComponent((req.query['ted_occupation']).trim());
        if(req.query['ted_event'])
-          projectionFilters['event'] = (req.query['ted_event']).trim();
+          projectionFilters['event'] = decodeURIComponent((req.query['ted_event']).trim());
        if(req.query['ted_title'])
-          projectionFilters['title'] = (req.query['ted_title']).trim();
+          projectionFilters['title'] = decodeURIComponent((req.query['ted_title']).trim());
        if(req.query.offset && req.query.limit){
           let pageNumber = parseInt(req.query.offset), pageSize = parseInt(req.query.limit);
           console.log(projectionFilters);
