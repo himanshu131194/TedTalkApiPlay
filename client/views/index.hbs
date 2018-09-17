@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+    <div class="">
+      <header>
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Ted</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="collapsible.html">Login</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+    <div class="container">
+         <form class="" action="" method="post">
+             <div class="row">
+                   <div class="col s4">
+                     <div class="row">
+                       <div class="input-field col s12">
+                         <input type="text" name="ted_name" id="autocomplete-input" class="autocomplete">
+                         <label for="autocomplete-input">Name</label>
+                       </div>
+                     </div>
+                   </div>
+
+                   <div class="col s4">
+                     <div class="row">
+                       <div class="input-field col s12">
+                         <input type="text" name="ted_occupation" id="autocomplete-input" class="autocomplete">
+                         <label for="autocomplete-input">Speaker occupation</label>
+                       </div>
+                     </div>
+                   </div>
+
+                   <div class="col s4">
+                     <div class="row">
+                       <div class="input-field col s12">
+                         <input type="text" name="ted_event" id="autocomplete-input" class="autocomplete">
+                         <label for="autocomplete-input">Event</label>
+                       </div>
+                     </div>
+                   </div>
+             </div>
+
+
+             <div class="row">
+                   <div class="col s4">
+                     <div class="row">
+                       <div class="input-field col s12">
+                         <input type="text" name="ted_title" id="autocomplete-input" class="autocomplete">
+                         <label for="autocomplete-input">Title</label>
+                       </div>
+                     </div>
+                   </div>
+
+                   <div class="col s4">
+                     <div class="row">
+                       <div class="input-field center col s12">
+                         <button class="btn waves-effect waves-light" type="submit">Search
+                          <i class="material-icons right">send</i>
+                         </button>
+                       </div>
+                     </div>
+                   </div>
+
+                   <div class="col s4">
+                     <div class="row">
+                       <!-- <div class="input-field col s12">
+                         <input type="text" id="autocomplete-input" class="autocomplete">
+                         <label for="autocomplete-input">Event</label>
+                       </div> -->
+                     </div>
+                   </div>
+             </div>
+
+
+
+         </form>
+    </div>
+
+      <div class="container" style="display: table">
+        <ul class="pagination right">
+           <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+           <li class="active" onclick="displayNewContent(this)"><a href="#!">1</a></li>
+           <li class="waves-effect" onclick="displayNewContent(this)"><a href="#!">2</a></li>
+           <li class="waves-effect" onclick="displayNewContent(this)"><a href="#!">3</a></li>
+           <li class="waves-effect"><a href="#!">4</a></li>
+           <li class="waves-effect"><a href="#!">5</a></li>
+           <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+         </ul>
+      </div>
+      <div class="container">
+        <div class="row">
+          {{#each talks}}
+              <div class="col s3">
+                    <div class="card">
+                      <div class="card-content">
+                        <span class="card-title">Card Title</span>
+                        <p>{{this.description}}</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="#">This is a link</a>
+                        <a href="#">This is a link</a>
+                      </div>
+                    </div>
+              </div>
+          {{/each}}
+
+        </div>
+      </div>
+    </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+      <script type="text/javascript">
+            (function(){
+              var paginationClick = document.querySelector('.')
+            }());
+      </script>
+    </body>
+  </html>
