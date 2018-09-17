@@ -25,12 +25,18 @@ const query = (path, ops) => {
 }
 
 exports.getAllTalks = (projection=null)=>{
-	let query = 'talks?';
-  if(projection && Object.keys(projection).length>0){
-
-     return query(`talks?offset=${projection.offset}&limit=${projection.limit}`, { method: 'GET' });
+	let queryParams = 'talks', count = 1;
+  if(projection){
+		 for(key in projection){
+			   if(count==1)
+				    queryParams += `?${key}=${projection[key]}`;
+				 else
+				    queryParams += `&${key}=${projection[key]}`
+				 ++count;
+		 }
+     return query(queryParams, { method: 'GET' });
   }
-  return query(query, { method: 'GET' });
+  return query(queryParams, { method: 'GET' });
 }
 
 

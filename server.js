@@ -10,7 +10,6 @@ const connectClient = MongoClient.connect("mongodb://ted:ted123@ds257851.mlab.co
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-var api = '';
 
 app.use((request, response, next) => {
 	Promise.resolve(connectClient).then((connection, err)=>{
@@ -28,7 +27,7 @@ app.use((request, response, next) => {
 app.set('view engine', 'hbs');
 app.set('views', './client/views');
 
-require('./server/routes/userRoute')(app, api);
+require('./server/routes/userRoute')(app);
 
 app.listen(5000, (err)=>{
      if(err)
